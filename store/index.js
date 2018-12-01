@@ -1,5 +1,6 @@
 export const state = function() {
 	return {
+		drawer: false,
 		pages: [
 			{
 				fullPath:'/',
@@ -19,5 +20,14 @@ export const getters = {
 			const match = state.pages.filter(page => page.fullPath === payload)
 			return match ? match.length > 0 ? match[0].title : '' : ''
 		}
+	},
+	getDrawer: function(state) {
+		return state.drawer
+	}
+}
+
+export const mutations = {
+	toggleDrawer: function(state) {
+		state.drawer = !state.drawer
 	}
 }

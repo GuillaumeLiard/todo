@@ -1,5 +1,5 @@
 <template>
-	<v-navigation-drawer app>
+	<v-navigation-drawer app clipped v-model="drawer">
 		<v-list>
 			<v-list-tile
 			v-for="link in links"
@@ -24,13 +24,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+	computed: {
+		...mapGetters({
+			drawerState: 'getDrawer'
+		})
+	},
 	data () {
 		return {
 			links: [
 				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
 				{ title: 'Done', icon: 'question_answer', url: '/done' }
-			]
+			],
+			drawer: false
+		}
+	},
+	watch: {
+		drawerState: function() {
+			this.drawer = this.drawerState
 		}
 	}
 }
