@@ -10,25 +10,13 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import Todo from '~/components/Todo.vue'
 export default {
-	data: function() {
-		return {
-			todos: [
-				{
-					'text': 'abc',
-					'status': 'ongoing'
-				},
-				{
-					'text': 'def',
-					'status': 'done'
-				},
-				{
-					'text': 'ghi',
-					'status': 'ongoing'
-				},
-			]
-		}
+	computed: {
+		...mapGetters({
+			'todos': 'todos/get'
+		})
 	},
 	components: {
 		Todo
