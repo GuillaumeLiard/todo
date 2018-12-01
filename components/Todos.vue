@@ -4,6 +4,9 @@
 			<Todo
 				v-for="(todo, index) in todos"
 				:key="index"
+				:title="todo.title"
+				:content="todo.content"
+				:status="todo.status"
 			/>
 		</v-flex>
 	</v-layout>

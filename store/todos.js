@@ -2,16 +2,19 @@ export const state = function() {
 	return {
 		todos: [
 			{
-				'text': 'abc',
-				'status': 'ongoing'
+				title: 'abc',
+				content: 'more content about abc',
+				status: true
 			},
 			{
-				'text': 'def',
-				'status': 'done'
+				title: 'def',
+				content: 'more content about def',
+				status: false
 			},
 			{
-				'text': 'ghi',
-				'status': 'ongoing'
+				title: 'ghi',
+				content: 'more content about ghi',
+				status: true
 			},
 		]
 	}
