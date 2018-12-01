@@ -21,7 +21,7 @@ export const getters = {
 			return match ? match.length > 0 ? match[0].title : '' : ''
 		}
 	},
-	getDrawer: function(state) {
+	drawer: function(state) {
 		return state.drawer
 	}
 }

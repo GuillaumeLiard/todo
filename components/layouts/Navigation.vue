@@ -1,5 +1,5 @@
 <template>
-	<v-navigation-drawer app clipped v-model="drawer">
+	<v-navigation-drawer app clipped v-model="drawerModel">
 		<v-list>
 			<v-list-tile
 			v-for="link in links"
@@ -24,20 +24,22 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
 	computed: {
-		// ...mapGetters({
-		// 	drawerState: 'getDrawerState'
-		// })
-		drawer: {
+		...mapGetters(['drawer']),
+		drawerModel: {
 			set(drawerState) {
-				this.$store.commit('setDrawerState', drawerState)
+				this.setDrawerState(drawerState)
+				// this.$store.commit('setDrawerState', drawerState)
 			},
 			get() {
-				return this.$store.state.drawer
+				return this.drawer
 			}
 		}
+	},
+	methods: {
+		...mapMutations(['setDrawerState']),
 	},
 	data () {
 		return {
@@ -45,13 +47,7 @@ export default {
 				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
 				{ title: 'Done', icon: 'widgets', url: '/done' }
 			],
-			// drawer: false
 		}
 	},
-	// watch: {
-	// 	drawerState: function() {
-	// 		this.drawer = this.drawerState
-	// 	}
-	// }
 }
 </script>
