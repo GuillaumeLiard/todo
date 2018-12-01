@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "nuxt",
-    "build": "nuxt generate",
+    "build": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "build-server": "nuxt build",
     "start-server": "nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
