@@ -13,7 +13,7 @@
 			<v-flex xs2>
 				<v-card-actions>
 					<v-switch
-					v-model="switch1"
+					v-model="done"
 					></v-switch>
 				</v-card-actions>
 			</v-flex>
@@ -22,12 +22,8 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
-	data: function() {
-		return {
-			switch1: true
-		}
-	},
 	props: {
 		title: {
 			type: String,
@@ -37,15 +33,31 @@ export default {
 			type: String,
 			default: ''
 		},
-		status: {
-			type: Boolean,
-			default: false
+		id: {
+			type: Number,
+			default: 0
 		}
 	},
 	computed: {
+		...mapGetters({
+			getDoneStatusById: 'todos/getDoneStatusById'
+		}),
 		cardColor: function() {
 			return this.status ? this.$vuetify.theme.error : this.$vuetify.theme.success
+		},
+		done: {
+			set(status) {
+				this.setTodoStatus({id: this.id, done: status})
+			},
+			get() {
+				return this.getDoneStatusById(this.id)
+			}
 		}
+	},
+	methods: {
+		...mapMutations({
+			setTodoStatus: 'todos/setTodoStatus'
+		}),
 	}
 }
 </script>
