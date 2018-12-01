@@ -56,7 +56,7 @@ module.exports = {
 		"short_name": "todo",
 		"start_url": "/todo/",
 		"display": "fullscreen",
-		"orientation": "portrait",
+		"orientation": "any",
 		"background_color": "#121212",
 		"theme_color": "#121212"
 	},
