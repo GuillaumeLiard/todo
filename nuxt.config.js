@@ -46,8 +46,13 @@ module.exports = {
 	],
 
 	manifest: {
-		name: 'My Awesome App',
-		lang: 'fr'
+		"name": "todo list",
+		"short_name": "todo",
+		"start_url": "/",
+		"display": "fullscreen",
+		"orientation": "portrait",
+		"background_color": "#121212",
+		"theme_color": "#121212"
 	},
 
 	/*
