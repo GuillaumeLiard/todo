@@ -42,7 +42,13 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+		'@nuxtjs/pwa',
   ],
+
+	manifest: {
+		name: 'My Awesome App',
+		lang: 'fr'
+	},
 
   /*
   ** Build configuration
