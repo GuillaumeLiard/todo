@@ -35,7 +35,7 @@ export default {
 		return {
 			links: [
 				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
-				{ title: 'Done', icon: 'question_answer', url: '/done' }
+				{ title: 'Done', icon: 'widgets', url: '/done' }
 			],
 			drawer: false
 		}
