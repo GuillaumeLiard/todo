@@ -1,0 +1,37 @@
+<template>
+	<v-navigation-drawer app>
+		<v-list>
+			<v-list-tile
+			v-for="link in links"
+			:key="link.title">
+			<v-list-tile-action>
+				<v-icon>
+					{{ link.icon }}
+				</v-icon>
+			</v-list-tile-action>
+
+			<v-list-tile-content>
+				<v-list-tile-title>
+					<nuxt-link
+					:to="link.url">
+					{{ link.title }}
+				</nuxt-link>
+			</v-list-tile-title>
+		</v-list-tile-content>
+	</v-list-tile>
+</v-list>
+</v-navigation-drawer>
+</template>
+
+<script>
+export default {
+	data () {
+		return {
+			links: [
+				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
+				{ title: 'Done', icon: 'question_answer', url: '/done' }
+			]
+		}
+	}
+}
+</script>

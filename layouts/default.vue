@@ -1,14 +1,7 @@
 <template>
 	<v-app>
-		<!-- <v-navigation-drawer app></v-navigation-drawer> -->
-		<v-toolbar dark color="primary">
-			<v-toolbar-side-icon></v-toolbar-side-icon>
-			<v-toolbar-title class="white--text">{{ title }}</v-toolbar-title>
-			<v-spacer></v-spacer>
-			<v-btn icon>
-				<v-icon>more_vert</v-icon>
-			</v-btn>
-		</v-toolbar>
+		<Navigation/>
+		<Toolbar :title="title"/>
 		<v-content>
 			<v-container fluid>
 				<router-view>
@@ -22,7 +15,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Navigation from '~/components/layouts/Navigation.vue'
+import Toolbar from '~/components/layouts/Toolbar.vue'
 export default {
+	components: {
+		Toolbar,
+		Navigation
+	},
 	computed: {
 		...mapGetters({
 			getPageTitle: 'getPageTitle'
@@ -31,8 +30,8 @@ export default {
 			return this.getPageTitle(this.$route.fullPath)
 		}
 	},
-	mounted: function() {
-		console.log('this', this);
-	}
+	// mounted: function() {
+	// 	console.log('this', this);
+	// }
 }
 </script>

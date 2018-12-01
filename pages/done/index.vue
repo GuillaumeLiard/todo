@@ -1,10 +1,5 @@
 <template>
 	<div class="page">
-		<div class="title">
-			<h1>
-				Done Todos
-			</h1>
-		</div>
 		<div class="main">
 			<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank" rel="noopener">
 				<img class="github_image" src="~/static/github-corner-right.svg">
