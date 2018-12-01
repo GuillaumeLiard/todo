@@ -24,12 +24,20 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 export default {
 	computed: {
-		...mapGetters({
-			drawerState: 'getDrawer'
-		})
+		// ...mapGetters({
+		// 	drawerState: 'getDrawerState'
+		// })
+		drawer: {
+			set(drawerState) {
+				this.$store.commit('setDrawerState', drawerState)
+			},
+			get() {
+				return this.$store.state.drawer
+			}
+		}
 	},
 	data () {
 		return {
@@ -37,13 +45,13 @@ export default {
 				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
 				{ title: 'Done', icon: 'widgets', url: '/done' }
 			],
-			drawer: false
+			// drawer: false
 		}
 	},
-	watch: {
-		drawerState: function() {
-			this.drawer = this.drawerState
-		}
-	}
+	// watch: {
+	// 	drawerState: function() {
+	// 		this.drawer = this.drawerState
+	// 	}
+	// }
 }
 </script>

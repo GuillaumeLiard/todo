@@ -29,5 +29,8 @@ export const getters = {
 export const mutations = {
 	toggleDrawer: function(state) {
 		state.drawer = !state.drawer
+	},
+	setDrawerState: function(state, payload) {
+		state.drawer = payload
 	}
 }
