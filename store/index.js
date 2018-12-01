@@ -9,6 +9,10 @@ export const state = function() {
 			{
 				fullPath:'/done',
 				title: 'Done todos',
+			},
+			{
+				fullPath:'/add',
+				title: 'Add todo',
 			}
 		]
 	}

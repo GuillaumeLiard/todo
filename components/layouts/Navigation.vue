@@ -15,6 +15,10 @@
 					</v-list-tile-content>
 				</v-list-tile>
 			</nuxt-link>
+			<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank" rel="noopener">
+				<img class="github_image" src="~/static/github-corner-right.svg">
+				<span>Github</span>
+			</a>
 		</v-list>
 	</v-navigation-drawer>
 </template>
@@ -56,5 +60,21 @@ a {
 .nuxt-link-active {
 	opacity: 0.2;
 	text-decoration: none;
+}
+.v-navigation-drawer {
+
+	/* position: relative; */
+}
+#github_link {
+
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	right: 2em;
+}
+.github_image {
+	width: 65px;
+	height: auto;
 }
 </style>

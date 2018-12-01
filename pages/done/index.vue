@@ -1,9 +1,6 @@
 <template>
 	<div class="page">
 		<div class="main">
-			<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank" rel="noopener">
-				<img class="github_image" src="~/static/github-corner-right.svg">
-			</a>
 			<Todos filter="done"/>
 		</div>
 	</div>
@@ -40,14 +37,5 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-	#github_link {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	.github_image {
-		width: 80px;
-		height: auto;
-	}
+	}	
 </style>
