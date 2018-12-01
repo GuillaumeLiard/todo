@@ -2,6 +2,8 @@
 
 > todo list
 
+nuxt vuetify pwa 
+
 ## Demo
 https://guillaumeliard.github.io/todo
 
