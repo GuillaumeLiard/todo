@@ -31,7 +31,7 @@ export default {
 	},
 	computed: {
 		cardColor: function() {
-			return this.status ? this.$vuetify.theme.success : this.$vuetify.theme.error
+			return this.status ? this.$vuetify.theme.error : this.$vuetify.theme.success
 		}
 	}
 }

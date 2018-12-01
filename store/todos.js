@@ -23,5 +23,11 @@ export const state = function() {
 export const getters = {
 	get: function(state) {
 		return state.todos
+	},
+	getOngoing: function(state) {
+		return state.todos.filter(todo => todo.status)
+	},
+	getDone: function(state) {
+		return state.todos.filter(todo => !todo.status)
 	}
 }
