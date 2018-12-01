@@ -1,25 +1,26 @@
 export const state = function() {
 	return {
-		todos: [
-			{
-				id: 1,
-				title: 'abc',
-				content: 'more content about abc',
-				done: true
-			},
-			{
-				id: 2,
-				title: 'def',
-				content: 'more content about def',
-				done: false
-			},
-			{
-				id: 3,
-				title: 'ghi',
-				content: 'more content about ghi',
-				done: true
-			},
-		]
+		todos: []
+		// todos: [
+		// 	{
+		// 		id: 1,
+		// 		title: 'abc',
+		// 		content: 'more content about abc',
+		// 		done: true
+		// 	},
+		// 	{
+		// 		id: 2,
+		// 		title: 'def',
+		// 		content: 'more content about def',
+		// 		done: false
+		// 	},
+		// 	{
+		// 		id: 3,
+		// 		title: 'ghi',
+		// 		content: 'more content about ghi',
+		// 		done: true
+		// 	},
+		// ]
 	}
 }
 
