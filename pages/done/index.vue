@@ -1,5 +1,10 @@
 <template>
 	<div class="page">
+		<div class="title">
+			<h1>
+				Done Todos
+			</h1>
+		</div>
 		<div class="main">
 			<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank" rel="noopener">
 				<img class="github_image" src="~/static/github-corner-right.svg">
@@ -8,7 +13,6 @@
 		</div>
 	</div>
 </template>
-
 <script>
 	import Todos from '~/components/Todos.vue'
 	export default {
@@ -29,9 +33,15 @@
 		height: 100vh; */
 		/* margin: 15%; */
 	}
+	.title {
+		height: 10%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	.main {
-		/* width: 100%; */
-		/* height: 60%; */
+		width: 100%;
+		height: 60%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
