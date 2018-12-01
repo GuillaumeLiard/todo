@@ -1,27 +1,22 @@
 <template>
 	<v-navigation-drawer app clipped v-model="drawerModel">
 		<v-list>
-			<v-list-tile
-			color="grey"
-			v-for="link in links"
-			:key="link.title">
-			<v-list-tile-action>
-				<v-icon>
-					{{ link.icon }}
-				</v-icon>
-			</v-list-tile-action>
-
-			<v-list-tile-content>
-				<v-list-tile-title>
-					<nuxt-link
-					:to="link.url" exact>
-					{{ link.title }}
-				</nuxt-link>
-			</v-list-tile-title>
-		</v-list-tile-content>
-	</v-list-tile>
-</v-list>
-</v-navigation-drawer>
+			<nuxt-link
+				v-for="link in links"
+				:key="link.title"
+				:to="link.url"
+				exact>
+				<v-list-tile>
+					<v-list-tile-action>
+						<v-icon>{{ link.icon }}</v-icon>
+					</v-list-tile-action>
+					<v-list-tile-content>
+						<v-list-tile-title>{{ link.title }}</v-list-tile-title>
+					</v-list-tile-content>
+				</v-list-tile>
+			</nuxt-link>
+		</v-list>
+	</v-navigation-drawer>
 </template>
 
 <script>
@@ -54,8 +49,12 @@ export default {
 </script>
 
 <style media="screen">
-	.nuxt-link-active {
-		opacity: 0.2;
-		text-decoration: none;
-	}
+a {
+
+	display: block
+}
+.nuxt-link-active {
+	opacity: 0.2;
+	text-decoration: none;
+}
 </style>
