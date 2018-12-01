@@ -3,7 +3,7 @@
 > todo list
 
 ## Demo
-https://github.com/GuillaumeLiard/todo
+https://guillaumeliard.github.io/todo
 
 ## Build Setup
 
