@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
-		<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank">
-			<img class="github_image" src="~/github-corner-right.svg">
+		<a id="github_link" href="https://github.com/GuillaumeLiard/todo" target="_blank" rel="noopener">
+			<img class="github_image" src="~/static/github-corner-right.svg">
 		</a>
 		<Todos/>
 	</div>
@@ -31,7 +31,7 @@
 		right: 0;
 	}
 	.github_image {
-		width: 5vw;
+		width: 80px;
 		height: auto;
 	}
 </style>
