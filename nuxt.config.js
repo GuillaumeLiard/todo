@@ -54,7 +54,7 @@ module.exports = {
 	manifest: {
 		"name": "todo list",
 		"short_name": "todo",
-		"start_url": "/",
+		"start_url": "/todo/",
 		"display": "fullscreen",
 		"orientation": "portrait",
 		"background_color": "#121212",
