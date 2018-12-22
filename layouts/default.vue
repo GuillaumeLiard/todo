@@ -9,7 +9,7 @@
 				</router-view>
 				<v-btn
 				color="success"
-				absolute
+				fixed
 				bottom
 				right
 				fab
