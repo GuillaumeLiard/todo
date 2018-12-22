@@ -2,7 +2,7 @@
 	<v-navigation-drawer app clipped v-model="drawerModel">
 		<v-list>
 			<nuxt-link
-				v-for="link in links"
+				v-for="link in linksOtherPages"
 				:key="link.title"
 				:to="link.url"
 				exact>
@@ -31,11 +31,13 @@ export default {
 		drawerModel: {
 			set(drawerState) {
 				this.setDrawerState(drawerState)
-				// this.$store.commit('setDrawerState', drawerState)
 			},
 			get() {
 				return this.drawer
 			}
+		},
+		linksOtherPages: function() {
+			return this.links.filter(link => link.url != this.$route.path)
 		}
 	},
 	methods: {
@@ -44,26 +46,18 @@ export default {
 	data () {
 		return {
 			links: [
-				{ title: 'Ongoing', icon: 'dashboard', url: '/' },
-				{ title: 'Done', icon: 'widgets', url: '/done' }
+				{ title: 'Ongoing', icon: 'hourglass_empty', url: '/' },
+				{ title: 'Done', icon: 'done', url: '/done' }
 			],
 		}
-	},
+	}
 }
 </script>
 
-<style media="screen">
+<style media="screen" scoped>
 a {
-
-	display: block
-}
-.nuxt-link-active {
-	opacity: 0.2;
+	display: block;
 	text-decoration: none;
-}
-.v-navigation-drawer {
-
-	/* position: relative; */
 }
 #github_link {
 

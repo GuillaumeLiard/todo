@@ -7,10 +7,21 @@
 				<router-view>
 					<nuxt/>
 				</router-view>
-			</v-container>
-		</v-content>
-		<v-footer app></v-footer>
-	</v-app>
+				<v-btn
+				color="success"
+				absolute
+				bottom
+				right
+				fab
+				>
+				<nuxt-link to="/add"	exact>
+					<v-icon>add</v-icon>
+				</nuxt-link>
+			</v-btn>
+		</v-container>
+	</v-content>
+	<v-footer app></v-footer>
+</v-app>
 </template>
 
 <script>
@@ -35,3 +46,11 @@ export default {
 	// }
 }
 </script>
+
+<style scoped>
+
+a {
+	text-decoration: none;
+}
+
+</style>
