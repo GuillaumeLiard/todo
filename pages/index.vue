@@ -15,16 +15,13 @@
 	}
 </script>
 
-<style>
-.page {
+<style scoped>
+/* .page {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	/* width: 100vw;
-	height: 100vh; */
-	/* margin: 15%; */
 }
 .title {
 	height: 10%;
@@ -38,6 +35,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+} */
 
 </style>

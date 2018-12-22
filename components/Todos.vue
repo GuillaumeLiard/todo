@@ -1,24 +1,27 @@
 <template>
-	<v-layout>
-		<v-flex xs12 sm6 offset-sm3>
-			<transition-group name="list" tag="div" mode="out-in">
-				<Todo
+	<v-container grid-list-md>
+		<transition-group name="list" tag="div" mode="out-in">
+			<Todo
 				v-for="(todo) in todosDisplay"
 				:key="todo.id"
 				:title="todo.title"
 				:content="todo.content"
 				:status="todo.status"
 				:id="todo.id"
-				/>
-			</transition-group>
-		</v-flex>
-	</v-layout>
+			/>
+		</transition-group>
+	</v-container>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
 import Todo from '~/components/Todo.vue'
+import btn from '~/components/atoms/btn.vue'
 export default {
+	components: {
+		Todo,
+		btn
+	},
 	props: {
 		filter: {
 			type: String,
@@ -43,14 +46,11 @@ export default {
 					return this.todos
 			}
 		}
-	},
-	components: {
-		Todo
 	}
 }
 </script>
 
-<style>
+<style scoped>
 .list-enter-active, .list-leave-active {
 	transition: all 0.4s;
 }
