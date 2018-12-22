@@ -1,24 +1,29 @@
 <template>
 	<v-container grid-list-md>
-		<transition-group name="list" tag="div" mode="out-in">
-			<Todo
-				v-for="(todo) in todosDisplay"
+		<draggable v-model="todos" @start="drag=true" @end="drag=false">
+			<transition-group name="list" tag="div" mode="out-in">
+				<Todo
+				v-for="(todo) in todos"
 				:key="todo.id"
 				:title="todo.title"
 				:content="todo.content"
 				:status="todo.status"
 				:id="todo.id"
-			/>
-		</transition-group>
+				/>
+			</transition-group>
+		</draggable>
 	</v-container>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import draggable from 'vuedraggable'
+
 import Todo from '~/components/Todo.vue'
 export default {
 	components: {
 		Todo,
+		draggable
 	},
 	props: {
 		filter: {
@@ -32,16 +37,25 @@ export default {
 			'ongoing': 'todos/getOngoing',
 			'done': 'todos/getDone'
 		}),
+		todos: {
+			get() {
+				return this.todosDisplay
+			},
+			set(value) {
+				console.log("value", value);
+				this.$store.commit('todos/updateOrder', { todosOrderUpdated: value})
+			}
+		},
 		todosDisplay: function() {
 			switch(this.filter) {
 				case 'ongoing':
-					return this.ongoing
-					break
+				return this.ongoing
+				break
 				case 'done':
-					return this.done
-					break
+				return this.done
+				break
 				default:
-					return this.todos
+				return this.todos
 			}
 		}
 	}
