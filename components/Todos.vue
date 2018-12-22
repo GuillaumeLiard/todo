@@ -16,11 +16,9 @@
 <script>
 import {mapGetters} from 'vuex'
 import Todo from '~/components/Todo.vue'
-import btn from '~/components/atoms/btn.vue'
 export default {
 	components: {
 		Todo,
-		btn
 	},
 	props: {
 		filter: {
