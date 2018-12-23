@@ -1,7 +1,7 @@
 <template>
 	<v-layout>
 		<v-flex>
-			<v-form>
+			<v-form @submit.prevent="addTodo">
 				<v-text-field
 					ref='input'
 					label="Title"
@@ -10,7 +10,7 @@
 					v-model="title"
 				/>
 				<v-btn
-					@click="addTodo"
+					type="submit"
 				>
 					add
 				</v-btn>
