@@ -36,7 +36,7 @@ export default {
 	data: function() {
 		return {
 			draggableOptions: {
-				handle: '.v-input--selection-controls__ripple',
+				handle: '.v-list__tile__action',
 				animation: 150,
 				ghostClass: 'ghost'
 			}
@@ -81,6 +81,6 @@ export default {
 	transform: translateX(30px);
 }
 .ghost {
-	background-color: grey;
+	opacity: 0;
 }
 </style>

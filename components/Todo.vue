@@ -4,6 +4,10 @@
 			<v-card>
 				<v-list>
 					<v-list-tile>
+						<v-list-tile-action>
+              <v-icon color="info">drag_indicator</v-icon>
+            </v-list-tile-action>
+
             <v-list-tile-content>
               <v-list-tile-title>{{title}}</v-list-tile-title>
             </v-list-tile-content>
@@ -35,6 +39,10 @@ export default {
 		id: {
 			type: Number,
 			default: 0
+		},
+		dragref: {
+			type: String,
+			default: 'drag'
 		}
 	},
 	computed: {
@@ -60,3 +68,10 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+	.v-list__tile__action {
+		cursor: pointer;
+		cursor: grab;
+	}
+</style>
