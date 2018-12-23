@@ -1,25 +1,37 @@
-importScripts('/todo/_nuxt/workbox.4c4f5ca6.js')
+importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/todo/_nuxt/07354bfaa50a32c6dbb3.js",
-    "revision": "b5020e15d4a4f1fbd0a02803ca1f59ad"
+    "url": "/_nuxt/0197976d8180afbce972.js",
+    "revision": "f4f112c0a08051885975f1510199fbf5"
   },
   {
-    "url": "/todo/_nuxt/45b0abc12c7d98a4fb62.js",
-    "revision": "0d462a68c1c0aa7b2c1baed4e020e06e"
+    "url": "/_nuxt/0606067476ab4cbb5541.js",
+    "revision": "398aeb93b16f7a51109705a283f6a4ec"
   },
   {
-    "url": "/todo/_nuxt/b86a3a869f57cef879c6.js",
-    "revision": "cc07381353b43a18c377166eeaa1dc23"
+    "url": "/_nuxt/17f6360811d4c4b34ce6.js",
+    "revision": "bce9a5f426b16de96757d437501485f3"
   },
   {
-    "url": "/todo/_nuxt/bb5e5b18339b2a03005f.js",
-    "revision": "fb6b1a80b5a69333233531fd03504ad6"
+    "url": "/_nuxt/1ad84ab35635c84259a4.js",
+    "revision": "0cb8a594618fa4f8c5500e0b172bc50f"
   },
   {
-    "url": "/todo/_nuxt/d0c32bb85a2a563c2591.js",
-    "revision": "daf3b7d437f7050f0ce7fa87b9abb29c"
+    "url": "/_nuxt/b88cf65635fcc7cad4d6.js",
+    "revision": "b56e74cb53ab130604e8cd6d311223c7"
+  },
+  {
+    "url": "/_nuxt/c01ae575f0f777998699.js",
+    "revision": "377b5d90a54ca16c3887bad052b0472a"
+  },
+  {
+    "url": "/_nuxt/d5705eae4682cf643d6b.js",
+    "revision": "35c533f4500be6774603ff4f36eb3258"
+  },
+  {
+    "url": "/_nuxt/dadf088e13dcf4f554f0.js",
+    "revision": "03893db0d57ebcbcd1f6c54397fa7c85"
   }
 ], {
   "cacheId": "todo",
@@ -30,6 +42,6 @@ workbox.precaching.precacheAndRoute([
 workbox.clientsClaim()
 workbox.skipWaiting()
 
-workbox.routing.registerRoute(new RegExp('/todo/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
 
-workbox.routing.registerRoute(new RegExp('/todo/.*'), workbox.strategies.networkFirst({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst({}), 'GET')
