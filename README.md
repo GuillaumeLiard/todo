@@ -6,7 +6,7 @@ https://guillaumeliard.github.io/todo
 
 Add todos and manage them
 
-Can be saved as an app from the browser to the user operating system.
+Can be saved as an app from the browser to the user operating system (pwa).
 
 Todos user data is locally saved inside browser's localstorage.
 
