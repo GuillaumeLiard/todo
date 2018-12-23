@@ -1,11 +1,23 @@
 # todo
 
-> todo list
+> minimalist todo list progressive web app
 
-nuxt vuetify pwa 
-
-## Demo
 https://guillaumeliard.github.io/todo
+
+Add todos and manage them
+
+Can be saved as an app from the browser to the user operating system.
+
+Todos user data is locally saved inside browser's localstorage.
+
+## Technologies
+
+nuxt (vue, vuex, ...)
+vuex-persistedstate (for localstorage data sync)
+vuetify (material design framework)
+pwa module (workbox, icon, ...)
+vuedraggable
+...
 
 ## Build Setup
 
@@ -25,3 +37,7 @@ $ npm run build
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## LICENSE
+
+MIT
