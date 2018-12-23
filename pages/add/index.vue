@@ -1,25 +1,22 @@
 <template>
-	<v-form>
-		<v-container>
-			<v-layout row wrap>
-				<v-flex xs12 sm6 md3>
-					<v-text-field
+	<v-layout>
+		<v-flex>
+			<v-form>
+				<v-text-field
 					ref='input'
 					label="Title"
+					required
 					outline
 					v-model="title"
-					></v-text-field>
-				</v-flex>
-				<v-flex xs12 sm6 md3>
-					<v-btn
+				/>
+				<v-btn
 					@click="addTodo"
-					>
-					 add
+				>
+					add
 				</v-btn>
-			</v-flex>
-		</v-layout>
-	</v-container>
-</v-form>
+			</v-form>
+		</v-flex>
+	</v-layout>
 </template>
 
 <script>

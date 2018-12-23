@@ -1,9 +1,5 @@
 <template>
-	<div class="page">
-		<div class="main">
-			<Todos filter="ongoing"/>
-		</div>
-	</div>
+	<Todos filter="ongoing"/>
 </template>
 
 <script>

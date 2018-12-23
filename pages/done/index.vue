@@ -1,10 +1,7 @@
 <template>
-	<div class="page">
-		<div class="main">
-			<Todos filter="done"/>
-		</div>
-	</div>
+	<Todos filter="done"/>
 </template>
+
 <script>
 	import Todos from '~/components/Todos.vue'
 	export default {

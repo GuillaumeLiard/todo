@@ -1,20 +1,16 @@
 <template>
-	<v-container
-		grid-list-md
-	>
-		<draggable v-model="todos" :options="draggableOptions">
-			<transition-group name="list" tag="div" mode="out-in">
-				<Todo
-				v-for="(todo) in todos"
-				:key="todo.id"
-				:title="todo.title"
-				:content="todo.content"
-				:status="todo.status"
-				:id="todo.id"
-				/>
-			</transition-group>
-		</draggable>
-	</v-container>
+	<draggable v-model="todos" :options="draggableOptions">
+		<transition-group name="list" tag="div" mode="out-in">
+			<Todo
+			v-for="(todo) in todos"
+			:key="todo.id"
+			:title="todo.title"
+			:content="todo.content"
+			:status="todo.status"
+			:id="todo.id"
+			/>
+		</transition-group>
+	</draggable>
 </template>
 
 <script>

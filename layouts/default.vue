@@ -4,9 +4,11 @@
 		<Toolbar :title="title"/>
 		<v-content>
 			<v-container fluid>
-				<router-view>
-					<nuxt/>
-				</router-view>
+				<v-container grid-list-md>
+					<router-view>
+						<nuxt/>
+					</router-view>
+				</v-container>
 				<v-btn
 				color="success"
 				fixed
@@ -41,9 +43,6 @@ export default {
 			return this.getPageTitle(this.$route.fullPath)
 		}
 	},
-	// mounted: function() {
-	// 	console.log('this', this);
-	// }
 }
 </script>
 
