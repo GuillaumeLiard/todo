@@ -46,7 +46,7 @@ export const getters = {
 	getDoneStatusById: function(state) {
 		return function(payload) {
 			const match = getters.get(state).filter(todo => todo.id === payload)
-			return match[0].done
+			return match.length > 0 ? match[0].done : null
 		}
 	}
 }
@@ -54,7 +54,7 @@ export const getters = {
 export const mutations = {
 	setTodoStatus: function(state, payload) {
 		const match = state.todos.filter(todo => todo.id === payload.id)
-		match[0].done = payload.done
+		if (match.length > 0) match[0].done = payload.done
 	},
 	add: function(state, payload) {
 		state.todos.push({
