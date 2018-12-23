@@ -1,3 +1,5 @@
+import { differenceBy } from 'lodash'
+
 export const state = function() {
 	return {
 		todos: []
@@ -63,7 +65,13 @@ export const mutations = {
 		})
 	},
 	updateOrder: function(state, payload) {
+		const { todos } = state
 		const { todosOrderUpdated } = payload
-		state.todos = todosOrderUpdated
+		const diff = differenceBy(todos, todosOrderUpdated, t => t.id)
+
+		state.todos = [
+			...diff,
+			...todosOrderUpdated
+		]
 	}
 }

@@ -36,7 +36,9 @@ export default {
 	data: function() {
 		return {
 			draggableOptions: {
-				handle: '.v-input--selection-controls__ripple'
+				handle: '.v-input--selection-controls__ripple',
+				animation: 150,
+				ghostClass: 'ghost'
 			}
 		}
 	},
@@ -77,5 +79,8 @@ export default {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
 	opacity: 0;
 	transform: translateX(30px);
+}
+.ghost {
+	background-color: grey;
 }
 </style>
