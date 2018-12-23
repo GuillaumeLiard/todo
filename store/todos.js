@@ -1,35 +1,32 @@
 export const state = function() {
 	return {
-		// todos: []
-		todos: [
-			// {
-			// 	id: 1,
-			// 	title: 'abc',
-			// 	content: 'more content about abc',
-			// 	done: true,
-			// 	order: 1,
-			// },
-			// {
-			// 	id: 2,
-			// 	title: 'def',
-			// 	content: 'more content about def',
-			// 	done: true,
-			// 	order: 2,
-			// },
-			// {
-			// 	id: 3,
-			// 	title: 'ghi',
-			// 	content: 'more content about ghi',
-			// 	done: false,
-			// 	order: 1,
-			// },
-		]
+		todos: []
+		// todos: [
+		// 	{
+		// 		id: 1,
+		// 		title: 'abc',
+		// 		content: 'more content about abc',
+		// 		done: true,
+		// 	},
+		// 	{
+		// 		id: 2,
+		// 		title: 'def',
+		// 		content: 'more content about def',
+		// 		done: true,
+		// 	},
+		// 	{
+		// 		id: 3,
+		// 		title: 'ghi',
+		// 		content: 'more content about ghi',
+		// 		done: true,
+		// 	},
+		// ]
 	}
 }
 
 export const getters = {
 	get: function(state) {
-		return state.todos.slice(0, state.todos.length).sort((firstEl, secondEl) => firstEl.order > secondEl.order)
+		return state.todos
 	},
 	getHighestId: function(state) {
 		let work = 0
@@ -66,17 +63,7 @@ export const mutations = {
 		})
 	},
 	updateOrder: function(state, payload) {
-		const { todos } = state
 		const { todosOrderUpdated } = payload
-		let todosOutput = []
-
-		for (let [index, todoUpdated] of todosOrderUpdated.entries()) {
-			const matches = todos.filter(todo => todo.id === todoUpdated.id)
-			if (matches.length) {
-				matches[0].order = index
-				todosOutput.push(matches[0])
-			}
-		}
-		this.todos = todosOutput
+		state.todos = todosOrderUpdated
 	}
 }
