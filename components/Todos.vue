@@ -6,7 +6,7 @@
 			:key="todo.id"
 			:title="todo.title"
 			:content="todo.content"
-			:status="todo.status"
+			:done="todo.done"
 			:id="todo.id"
 			/>
 		</transition-group>

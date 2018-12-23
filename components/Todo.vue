@@ -4,19 +4,21 @@
 			<v-card>
 				<v-list>
 					<v-list-tile>
+
 						<v-list-tile-action>
-              <v-icon color="info">drag_indicator</v-icon>
-            </v-list-tile-action>
+							<v-icon color="info">drag_indicator</v-icon>
+						</v-list-tile-action>
 
-            <v-list-tile-content>
-              <v-list-tile-title>{{title}}</v-list-tile-title>
-            </v-list-tile-content>
+						<v-list-tile-content>
+							<v-list-tile-title>{{title}}</v-list-tile-title>
+						</v-list-tile-content>
 
-            <v-list-tile-avatar>
+						<v-list-tile-avatar>
 							<v-switch
-								v-model="done"
+							v-model="doneModel"
 							/>
-            </v-list-tile-avatar>
+						</v-list-tile-avatar>
+
 					</v-list-tile>
 				</v-list>
 			</v-card>
@@ -36,28 +38,24 @@ export default {
 			type: String,
 			default: ''
 		},
+		done: {
+			type: Boolean,
+			default: false
+		},
 		id: {
 			type: Number,
 			default: 0
 		},
-		dragref: {
-			type: String,
-			default: 'drag'
-		}
 	},
 	computed: {
-		...mapGetters({
-			getDoneStatusById: 'todos/getDoneStatusById'
-		}),
-		cardColor: function() {
-			return this.status ? this.$vuetify.theme.error : this.$vuetify.theme.success
-		},
-		done: {
+		doneModel: {
 			set(status) {
-				this.setTodoStatus({id: this.id, done: status})
+				setTimeout(() => {
+					this.setTodoStatus({id: this.id, done: status})
+				}, 150)
 			},
 			get() {
-				return this.getDoneStatusById(this.id)
+				return this.done
 			}
 		}
 	},
@@ -70,8 +68,8 @@ export default {
 </script>
 
 <style scoped>
-	.v-list__tile__action {
-		cursor: pointer;
-		cursor: grab;
-	}
+.v-list__tile__action {
+	cursor: pointer;
+	cursor: grab;
+}
 </style>

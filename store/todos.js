@@ -43,12 +43,12 @@ export const getters = {
 	getDone: function(state) {
 		return getters.get(state).filter(todo => todo.done)
 	},
-	getDoneStatusById: function(state) {
-		return function(payload) {
-			const match = getters.get(state).filter(todo => todo.id === payload)
-			return match.length > 0 ? match[0].done : null
-		}
-	}
+	// getDoneStatusById: function(state) {
+	// 	return function(payload) {
+	// 		const match = getters.get(state).filter(todo => todo.id === payload)
+	// 		return match.length > 0 ? match[0].done : null
+	// 	}
+	// }
 }
 
 export const mutations = {
