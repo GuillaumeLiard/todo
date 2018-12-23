@@ -1,6 +1,8 @@
 <template>
-	<v-container grid-list-md>
-		<draggable v-model="todos" @start="drag=true" @end="drag=false">
+	<v-container
+		grid-list-md
+	>
+		<draggable v-model="todos" :options="draggableOptions">
 			<transition-group name="list" tag="div" mode="out-in">
 				<Todo
 				v-for="(todo) in todos"
@@ -31,6 +33,13 @@ export default {
 			default: 'todos'
 		}
 	},
+	data: function() {
+		return {
+			draggableOptions: {
+				handle: '.v-input--selection-controls__ripple'
+			}
+		}
+	},
 	computed: {
 		...mapGetters({
 			'todos': 'todos/get',
@@ -42,7 +51,6 @@ export default {
 				return this.todosDisplay
 			},
 			set(value) {
-				console.log("value", value);
 				this.$store.commit('todos/updateOrder', { todosOrderUpdated: value})
 			}
 		},
