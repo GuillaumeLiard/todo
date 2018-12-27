@@ -19,10 +19,6 @@ import draggable from 'vuedraggable'
 
 import Todo from '~/components/Todo.vue'
 export default {
-	mounted: function() {
-		alert('debug');
-		alert(JSON.stringify(this.todos))
-	},
 	components: {
 		Todo,
 		draggable
