@@ -33,7 +33,7 @@ export default {
 	},
 	methods: {
 		...mapMutations({
-			toggleDrawer: 'toggleDrawer'
+			toggleDrawer: 'navigation/toggleDrawer'
 		}),
 		// toggleDrawer: function() {
 		// 	console.log('click')

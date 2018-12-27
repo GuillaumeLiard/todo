@@ -27,7 +27,9 @@
 import { mapGetters, mapMutations } from 'vuex'
 export default {
 	computed: {
-		...mapGetters(['drawer']),
+		...mapGetters({
+			drawer: 'navigation/drawer'
+		}),
 		drawerModel: {
 			set(drawerState) {
 				this.setDrawerState(drawerState)
@@ -41,7 +43,9 @@ export default {
 		}
 	},
 	methods: {
-		...mapMutations(['setDrawerState']),
+		...mapMutations({
+			setDrawerState: 'navigation/setDrawerState'
+		}),
 	},
 	data () {
 		return {

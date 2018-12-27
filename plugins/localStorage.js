@@ -5,7 +5,16 @@ export default ({store}) => {
 		createPersistedState({
 			// key: 'yourkey',
 			// paths: [...]
-			paths: ['todos']
+			// getState: function(state) {
+			// 	console.log('state', state)
+			// },
+			paths: ['todos', 'navigation'],
+			arrayMerger: function(store, saved) {
+				return [
+					...saved,
+					...store
+				]
+			}
 			// ...
 		})(store)
 	})

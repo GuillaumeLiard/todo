@@ -37,7 +37,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			pages: 'getPages'
+			pages: 'navigation/getPages'
 		}),
 		title: function () {
 			const matches = this.pages.filter(page => page.name === this.$route.name)
