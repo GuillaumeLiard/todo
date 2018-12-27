@@ -31,11 +31,11 @@ export const getters = {
 		return state.todos
 	},
 	getHighestId: function(state) {
-		let work = 0
+		let highestId = 0
 		for (let todo of getters.get(state)){
-			if (todo.id > work) work = todo.id
+			if (todo.id > highestId) highestId = todo.id
 		}
-		return work
+		return highestId
 	},
 	getOngoing: function(state) {
 		return getters.get(state).filter(todo => !todo.done)
@@ -43,12 +43,6 @@ export const getters = {
 	getDone: function(state) {
 		return getters.get(state).filter(todo => todo.done)
 	},
-	// getDoneStatusById: function(state) {
-	// 	return function(payload) {
-	// 		const match = getters.get(state).filter(todo => todo.id === payload)
-	// 		return match.length > 0 ? match[0].done : null
-	// 	}
-	// }
 }
 
 export const mutations = {

@@ -37,7 +37,6 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			getPageTitle: 'getPageTitle',
 			pages: 'getPages'
 		}),
 		title: function () {
