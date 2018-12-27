@@ -3,15 +3,15 @@ export const state = function() {
 		drawer: false,
 		pages: [
 			{
-				fullPath:'/',
+				name:'index',
 				title: 'Ongoing todos',
 			},
 			{
-				fullPath:'/done',
+				name:'done',
 				title: 'Done todos',
 			},
 			{
-				fullPath:'/add',
+				name:'add',
 				title: 'Add todo',
 			}
 		]

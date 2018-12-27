@@ -40,14 +40,14 @@ export default {
 			getPageTitle: 'getPageTitle',
 			pages: 'getPages'
 		}),
-		title: function() {
-			const matches = this.pages.filter(page => page.fullPath === this.$route.fullPath)
+		title: function () {
+			const matches = this.pages.filter(page => page.name === this.$route.name)
 			if (matches.length) {
 				return matches[0].title
 			} else {
 				return 'default'
 			}
-		}
+	  }
 	},
 }
 </script>
