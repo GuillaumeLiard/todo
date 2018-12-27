@@ -37,10 +37,16 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			getPageTitle: 'getPageTitle'
+			getPageTitle: 'getPageTitle',
+			pages: 'getPages'
 		}),
 		title: function() {
-			return this.getPageTitle(this.$route.fullPath)
+			const matches = this.pages.filter(page => page.fullPath === this.$route.fullPath)
+			if (matches.length) {
+				return matches[0].title
+			} else {
+				return 'default'
+			}
 		}
 	},
 }

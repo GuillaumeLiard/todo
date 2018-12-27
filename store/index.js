@@ -19,11 +19,8 @@ export const state = function() {
 }
 
 export const getters = {
-	getPageTitle: function(state) {
-		return function(payload) {
-			const match = state.pages.filter(page => page.fullPath === payload)
-			return match ? match.length > 0 ? match[0].title : '' : ''
-		}
+	getPages: function(state) {
+		return state.pages
 	},
 	drawer: function(state) {
 		return state.drawer
