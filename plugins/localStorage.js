@@ -8,13 +8,17 @@ export default ({store}) => {
 			// getState: function(state) {
 			// 	console.log('state', state)
 			// },
-			paths: ['todos', 'navigation'],
-			arrayMerger: function(store, saved) {
-				return [
-					...saved,
-					...store
-				]
-			}
+			// paths: ['todos', 'navigation'],
+			paths: ['todos'],
+			// arrayMerger: function(store, saved) {
+			//
+			// 	console.log('store', store)
+			// 	console.log('saved', saved)
+			// 	return [
+			// 		...saved,
+			// 		...store
+			// 	]
+			// }
 			// ...
 		})(store)
 	})
