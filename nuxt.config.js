@@ -1,9 +1,9 @@
 const pkg = require('./package')
 
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/todo/'
-  }
+	router: {
+		base: '/todo/'
+	}
 } : {}
 
 module.exports = {
@@ -62,6 +62,27 @@ module.exports = {
 		"theme_color": "#121212"
 	},
 
+	workbox: {
+		runtimeCaching: [
+			{
+				// Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
+				urlPattern: 'https://fonts.googleapis.com/.*',
+				// Defaults to `networkFirst` if omitted
+				handler: 'staleWhileRevalidate',
+				// Defaults to `GET` if omitted
+				method: 'GET'
+			},
+			{
+				// Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
+				urlPattern: 'https://fonts.gstatic.com/.*',
+				// Defaults to `networkFirst` if omitted
+				handler: 'cacheFirst',
+				// Defaults to `GET` if omitted
+				method: 'GET'
+			},
+		]
+	},
+
 	/*
 	** Build configuration
 	*/
@@ -83,7 +104,7 @@ module.exports = {
 	},
 
 	...routerBase,
-  generate: {
+	generate: {
 		dir: 'docs'
 	}
 }

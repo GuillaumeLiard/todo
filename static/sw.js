@@ -2,6 +2,10 @@ importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
+    "url": "/_nuxt/11dc3d83ff874218033b.js",
+    "revision": "f72496e6e0913d5f4ee18a972c0a3106"
+  },
+  {
     "url": "/_nuxt/17f6360811d4c4b34ce6.js",
     "revision": "bce9a5f426b16de96757d437501485f3"
   },
@@ -20,10 +24,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "/_nuxt/ab1dfb7d92b87e983cda.js",
     "revision": "3edf93897e177538655b994b1986fe93"
-  },
-  {
-    "url": "/_nuxt/b2829380e2126db71bbe.js",
-    "revision": "7708c07d088643c0f4ae0dce5f6d8d34"
   },
   {
     "url": "/_nuxt/c65fc55c5f3fede43712.js",
@@ -45,3 +45,7 @@ workbox.skipWaiting()
 workbox.routing.registerRoute(new RegExp('/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
 
 workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst({}), 'GET')
+
+workbox.routing.registerRoute(new RegExp('https://fonts.googleapis.com/.*'), workbox.strategies.staleWhileRevalidate({}), 'GET')
+
+workbox.routing.registerRoute(new RegExp('https://fonts.gstatic.com/.*'), workbox.strategies.cacheFirst({}), 'GET')
